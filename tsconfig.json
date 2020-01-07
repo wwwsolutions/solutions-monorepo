@@ -15,7 +15,20 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@monorepo/shared/ui-formatters": [
+        "libs/shared/ui-formatters/src/index.ts"
+      ],
+      "@monorepo/shared/data-access-services": [
+        "libs/shared/data-access-services/src/index.ts"
+      ],
+      "@monorepo/shared/utils-e2e": ["libs/shared/utils-e2e/src/index.ts"],
+      "@monorepo/shared/data-access-models": [
+        "libs/shared/data-access-models/src/index.ts"
+      ],
+      "@monorepo/shared/styles": ["libs/shared/styles/src/index.ts"],
+      "@monorepo/shared/assets": ["libs/shared/assets/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }

@@ -1,0 +1,6 @@
+{
+  "projects": {
+    "default": "solutions-monorepo",
+    "testing": "solutions-monorepo"
+  }
+}
