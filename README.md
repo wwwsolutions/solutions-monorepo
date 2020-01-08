@@ -289,3 +289,31 @@ Use [Angular Console](https://angularconsole.com/) for Visual Studio Code as cod
   - [x] solved
 
   https://stackoverflow.com/questions/52092618/how-to-find-the-reason-of-cannot-find-module-for-nrwl-modules
+
+---
+
+### Nx Resources
+
+#### Official Documentation
+
+- [Getting Started](https://nx.dev/angular/getting-started/what-is-nx)
+
+- [Nx](https://nx.dev/angular)
+
+- [Nx Playbook](https://nxplaybook.com/)
+
+- [NPM @nrwl/nx](https://www.npmjs.com/package/@nrwl/nx)
+
+#### Articles & Guides & Tutorials
+
+- [How to organize and name applications and libraries in an Nx monorepo for immediate team-wide benefits](https://medium.com/showpad-engineering/how-to-organize-and-name-applications-and-libraries-in-an-nx-monorepo-for-immediate-team-wide-9876510dbe28)
+
+#### Videos
+
+- [Nx - Extensible Dev Tools for Monorepos](https://www.youtube.com/watch?v=XZpp52IqD2A&t=1s)
+
+- [Build enterprise applications with angular](https://www.youtube.com/watch?v=jltB_H2aNK8)
+
+#### Community / Forums
+
+- [Nx/comunity](https://gitter.im/nrwl-nx/community?at=5d9bfa123220922ffb49d07f)
