@@ -8,40 +8,47 @@ This project was generated using [Nx](https://nx.dev).
 
 ---
 
-## Little Dragon Society
+## Google Cloud Functions + Firebase Hosting + Electron support
 
-Nx monorepo setup with Electron support + Google Cloud Functions + Firebase Hosting.
+### Installation
+
+```bash
+npm run setup
+```
 
 ### Usage
 
 #### Working with Angular
 
 ```bash
-npm run serve:admin                             # developer server on port 4201
-npm run serve:client                            # developer server on port 4202
+npm run serve:admin-app                             # developer server on port 4201
+npm run serve:client-app                            # developer server on port 4202
+npm run serve:all
 ```
 
 ```bash
-npm run build:admin                             # build dist/apps/admin/
-npm run build:client                            # build dist/apps/client/
+npm run build:admin-app                             # build dist/apps/admin/
+npm run build:client-app                            # build dist/apps/client/
+npm run build:all
 ```
 
 ```bash
-ng test                                         # test all
-ng test admin                                   # Jest unit tests
-ng test client                                  # Jest unit tests
+ng test admin-app                                   # Jest unit tests
+ng test client-app                                  # Jest unit tests
+ng test                                             # test all
 
-ng e2e                                          # 2e2 tests for all
-ng e2e admin-e2e                                # Cypress e2e tests
-ng e2e client-e2e                               # Cypress e2e tests
+ng e2e admin-e2e-app                                # Cypress e2e tests
+ng e2e client-e2e-app                               # Cypress e2e tests
+ng e2e                                              # 2e2 tests all
 ```
 
 ```bash
-ng lint                                         # lint all
-ng lint admin
-ng lint client
+ng lint admin-app
+ng lint client-app
+ng lint                                             # lint all
 ```
 
+<!--
 #### Working with Angular Electron
 
 ```bash
@@ -58,6 +65,7 @@ npm run build.electron.admin.mac
 # Start Electron admin app
 npm run start.electron.admin
 ```
+-->
 
 #### Working with Firebase Functions
 
@@ -89,6 +97,7 @@ nx affected:lint
 
 ---
 
+<!--
 ### Project configuration
 
 Project configuration steps. Using Nx file architecture.
@@ -176,8 +185,8 @@ nx generate @nrwl/node:application functions --unit-test-runner=jest --directory
 npm i -g firebase-tools
 firebase login
 
-# If you created your project in the fireabse website account, during firebase deployment we need to select 
-# that firebase project for hosting. Also if you created more than one project in the firebase account, 
+# If you created your project in the firebase website account, during firebase deployment we need to select
+# that firebase project for hosting. Also if you created more than one project in the firebase account,
 # we need to select one project for the deployment process. For that you need to run the below command.
 
 firebase use --add
@@ -189,33 +198,20 @@ firebase deploy
 
 ---
 
+-->
+
 #### Shared libraries
 
 The goal of a code-sharing strategy is to support the architecture where a single codebase can be utilized by multiple applications.
 
-1. __Organize libraries into shallow folder structure (example):__
+1. **Organize libraries into shallow folder structure**
 
-   - data
-     - model
-     - example_folder
-   - feature
-     - auth
-     - example_folder
-   - navigation
-     - users
-     - example_folder
-   - state
-     - router
-     - example_folder
-   - pipes
-   - directives
-   - services
-   - testing
-
-2. __Code sharing rules:__
+2. **Code sharing rules:**
 
    - Ask the question: Can this code be shared between apps?
-   - Use __Angular Console__.
+   - To boost productivity utilize **Angular Console** (VSCode addon).
+
+---
 
 ##### Code scaffolding examples
 
@@ -224,62 +220,60 @@ The goal of a code-sharing strategy is to support the architecture where a singl
 ```bash
 # Generate Angular component
 ng generate @nrwl/angular:component --help
-ng generate @nrwl/angular:component example --project=admin --export --dryRun
+ng generate @nrwl/angular:component example --project=admin-app --export --dryRun
 ```
 
 ```bash
 # Generate Angular library
-ng g @nrwl/angular:library testing --unit-test-runner=none --style=none --prefix=common
-
-ng g @nrwl/angular:library auth --unit-test-runner=jest --directory=feature --style=none --prefix=common
-
-ng g @nrwl/angular:library router --unit-test-runner=jest --directory=state --style=none --prefix=common
-
-ng g @nrwl/angular:library users --unit-test-runner=jest --directory=navigation --routing --lazy --parent-module=apps/admin/src/app/app.module.ts --style=none --prefix=common
+ng g @nrwl/angular:library users --unit-test-runner=jest --directory=navigation --routing --lazy --parent-module=apps/admin/src/app/app.module.ts --style=none --prefix=common --dryRun
 ```
 
 ```bash
 # Typescript library
-ng g @nrwl/workspace:library models --unit-test-runner=none --directory=data
-
-ng g @nrwl/workspace:library types --defaults --directory=data
-
-ng g @nrwl/workspace:library interfaces --defaults --directory=data
+ng g @nrwl/workspace:library models --unit-test-runner=none --directory=shared-data-access --dryRun
 ```
 
 ```bash
 # Generate shareable library
-ng generate @nrwl/workspace:library --name=services --no-interactive
+ng generate @nrwl/workspace:library --name=services --no-interactive --dryRun
 
 # Generate Angular service
-ng generate @nrwl/angular:service --name=children --project=services
+ng generate @nrwl/angular:service --name=children --project=services --dryRun
 ```
 
----
-
-#### Configuration Fixes History
-
-- __serialize-javascript__ - problem with dependency resolution
-  Use this temporary solution prior to installing dependencies.
-  https://github.com/angular/angular-cli/issues/16414
-
-  - [X] solved  
-
-- __firebase deploy functions failure__
-  Set package.json field "engines": 8
-  - [X] solved  
-
-- __ng test failure__
-  Downgrade "jest-preset-angular": "^8.0.0" > "jest-preset-angular": "^7.1.1"
-  - [X] solved  
-
-- __tsconfig path resolution__
-  TOTO: fix it
-  https://stackoverflow.com/questions/52092618/how-to-find-the-reason-of-cannot-find-module-for-nrwl-modules
-  - [ ] solved  
+Explore more examples in "**/tools/scaffolding/**" directory.
 
 ---
 
 ### Recommendation
 
 Use [Angular Console](https://angularconsole.com/) for Visual Studio Code as code scaffolding tool.
+
+---
+
+#### Fixes History
+
+- **serialize-javascript**
+  Problem with dependency resolution. Use this temporary solution prior to installing dependencies.
+
+  - [x] solved
+
+  https://github.com/angular/angular-cli/issues/16414
+
+- **firebase deploy functions failure**
+
+  - [x] solved
+
+  Package.json field "engines": 10
+
+- **ng test failure**
+
+  - [x] solved
+
+  Downgraded "jest-preset-angular": "^8.0.0" > "jest-preset-angular": "^7.1.1".
+
+- **tsconfig path resolution**
+
+  - [x] solved
+
+  https://stackoverflow.com/questions/52092618/how-to-find-the-reason-of-cannot-find-module-for-nrwl-modules

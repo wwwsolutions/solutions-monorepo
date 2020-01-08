@@ -43,7 +43,10 @@
               "apps/functions/tsconfig.app.json",
               "apps/functions/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/functions/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/functions/**"
+            ]
           }
         },
         "test": {
@@ -89,7 +92,9 @@
               "apps/admin-app/src/favicon.ico",
               "apps/admin-app/src/assets"
             ],
-            "styles": ["apps/admin-app/src/styles.scss"],
+            "styles": [
+              "apps/admin-app/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -148,7 +153,10 @@
               "apps/admin-app/tsconfig.app.json",
               "apps/admin-app/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/admin-app/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/admin-app/**"
+            ]
           }
         },
         "test": {
@@ -182,8 +190,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/admin-app-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/admin-app-e2e/**"]
+            "tsConfig": [
+              "apps/admin-app-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/admin-app-e2e/**"
+            ]
           }
         }
       }
@@ -222,7 +235,9 @@
               "apps/client-app/src/favicon.ico",
               "apps/client-app/src/assets"
             ],
-            "styles": ["apps/client-app/src/styles.scss"],
+            "styles": [
+              "apps/client-app/src/styles.scss"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -281,7 +296,10 @@
               "apps/client-app/tsconfig.app.json",
               "apps/client-app/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/client-app/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/client-app/**"
+            ]
           }
         },
         "test": {
@@ -315,8 +333,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/client-app-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/client-app-e2e/**"]
+            "tsConfig": [
+              "apps/client-app-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/client-app-e2e/**"
+            ]
           }
         }
       }
@@ -334,7 +357,10 @@
               "libs/shared/ui-formatters/tsconfig.lib.json",
               "libs/shared/ui-formatters/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/shared/ui-formatters/**"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/ui-formatters/**"
+            ]
           }
         },
         "test": {
@@ -395,8 +421,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/shared/utils-e2e/tsconfig.lib.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/utils-e2e/**"]
+            "tsConfig": [
+              "libs/shared/utils-e2e/tsconfig.lib.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/utils-e2e/**"
+            ]
           }
         }
       }
@@ -410,7 +441,9 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/shared/data-access-models/tsconfig.lib.json"],
+            "tsConfig": [
+              "libs/shared/data-access-models/tsconfig.lib.json"
+            ],
             "exclude": [
               "**/node_modules/**",
               "!libs/shared/data-access-models/**"
@@ -428,8 +461,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["libs/shared/styles/tsconfig.lib.json"],
-            "exclude": ["**/node_modules/**", "!libs/shared/styles/**"]
+            "tsConfig": [
+              "libs/shared/styles/tsconfig.lib.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/shared/styles/**"
+            ]
           }
         }
       }
