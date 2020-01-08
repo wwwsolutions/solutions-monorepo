@@ -97,6 +97,18 @@ nx affected:lint
 
 ---
 
+#### Deployment Scripts
+
+```bash
+firebase:deploy:functions                   # deploy Google Cloud functions
+firebase:deploy:admin-app                   # deploy to hosting admin-app
+firebase:deploy:client-app                  # deploy to hosting:client-app
+firebase:deploy:hosting                     # deploy only hosting
+firebase:deploy                             # deploy all
+```
+
+---
+
 <!--
 ### Project configuration
 
