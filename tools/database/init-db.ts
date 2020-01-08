@@ -1,4 +1,3 @@
-// import { BOOKS, findChaptersForBook } from './db-data';
 import { CHILDREN, findNeedsForChild } from './db-data';
 
 import * as firebase from 'firebase';

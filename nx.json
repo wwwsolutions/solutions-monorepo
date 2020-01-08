@@ -11,22 +11,22 @@
     "nx.json": "*"
   },
   "projects": {
-    "admin-app-e2e": {
-      "tags": ["type:e2e", "scope:admin"]
-    },
     "admin-app": {
       "tags": ["type:app", "scope:admin"],
       "implicitDependecies": ["shared-assets"]
     },
-    "functions": {
-      "tags": ["type:functions"]
+    "client-app": {
+      "tags": ["type:app", "scope:client"],
+      "implicitDependecies": ["shared-assets"]
+    },
+    "admin-app-e2e": {
+      "tags": ["type:e2e", "scope:admin"]
     },
     "client-app-e2e": {
       "tags": ["type:e2e", "scope:client"]
     },
-    "client-app": {
-      "tags": ["type:app", "scope:client"],
-      "implicitDependecies": ["shared-assets"]
+    "functions": {
+      "tags": ["type:functions"]
     },
     "shared-ui-formatters": {
       "tags": ["type:ui", "scope:shared"]
@@ -34,11 +34,11 @@
     "shared-data-access-services": {
       "tags": ["type:data", "scope:shared"]
     },
-    "shared-utils-e2e": {
-      "tags": ["type:e2e-utils", "scope:shared"]
-    },
     "shared-data-access-models": {
       "tags": ["type:data", "scope:shared"]
+    },
+    "shared-utils-e2e": {
+      "tags": ["type:e2e-utils", "scope:shared"]
     },
     "shared-styles": {
       "tags": ["type:styles", "scope:shared"]

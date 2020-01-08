@@ -82,7 +82,7 @@
           },
           {
             "sourceTag": "type:data",
-            "onlyDependOnLibsWithTags": ["type:types"]
+            "onlyDependOnLibsWithTags": ["type:feature"]
           },
           {
             "sourceTag": "type:e2e",
@@ -90,15 +90,15 @@
           },
           {
             "sourceTag": "type:ui",
-            "onlyDependOnLibsWithTags": ["type:types", "type:ui"]
+            "onlyDependOnLibsWithTags": ["type:data"]
           },
           {
             "sourceTag": "type:admin",
-            "onlyDependOnLibsWithTags": ["type:admin", "type:data"]
+            "onlyDependOnLibsWithTags": ["type:ui", "type:data"]
           },
           {
             "sourceTag": "type:client",
-            "onlyDependOnLibsWithTags": ["type:client", "type:data"]
+            "onlyDependOnLibsWithTags": ["type:ui", "type:data"]
           }
         ]
       }

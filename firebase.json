@@ -15,8 +15,7 @@
       ],
       "rewrites": [
         {
-          "source": "**",
-          "function": "server"
+          "source": "**"
         }
       ]
     },
@@ -31,8 +30,7 @@
       ],
       "rewrites": [
         {
-          "source": "**",
-          "function": "server"
+          "source": "**"
         }
       ]
     }
