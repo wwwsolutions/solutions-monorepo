@@ -3,19 +3,38 @@
     "predeploy": ["ng lint functions", "npm run build:functions"],
     "source": "/"
   },
-  "hosting": {
-    "public": "dist/apps/client-app",
-    "ignore": [
-      "package-lock.json",
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
-    "rewrites": [
-      {
-        "source": "**",
-        "function": "server"
-      }
-    ]
-  }
+  "hosting": [
+    {
+      "target": "client",
+      "public": "dist/apps/client-app",
+      "ignore": [
+        "package-lock.json",
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "server"
+        }
+      ]
+    },
+    {
+      "target": "admin",
+      "public": "dist/apps/admin-app",
+      "ignore": [
+        "package-lock.json",
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "function": "server"
+        }
+      ]
+    }
+  ]
 }

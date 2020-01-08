@@ -2,5 +2,27 @@
   "projects": {
     "default": "solutions-monorepo",
     "testing": "solutions-monorepo"
+  },
+  "targets": {
+    "solutions-monorepo": {
+      "hosting": {
+        "admin": [
+          "solutions-admin"
+        ],
+        "client": [
+          "solutions-client"
+        ]
+      }
+    },
+    "testing": {
+      "hosting": {
+        "admin": [
+          "solutions-admin"
+        ],
+        "client": [
+          "solutions-client"
+        ]
+      }
+    }
   }
 }

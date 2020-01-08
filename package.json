@@ -5,7 +5,7 @@
   "author": "Domagoj-Mario Mendas <developer.domagoj.mendas@gmail.com> (https://github.com/wwwsolutions)",
   "main": "dist/apps/functions/main.js",
   "engines": {
-    "node": "8"
+    "node": "10"
   },
   "scripts": {
     "init-db": "ts-node -P ./tools/database/init-db.tsconfig.json ./tools/database/init-db.ts",
@@ -13,7 +13,6 @@
     "nx": "nx",
     "test": "npm run postinstall.web && ng test",
     "lint": "nx workspace-lint && ng lint",
-    "e2e": "npm run postinstall.web && ng e2e",
     "clean": "rm -rf node_modules",
     "clean:build": "rm -rf dist/apps",
     "resolution": "npx npm-force-resolutions",
@@ -44,9 +43,17 @@
     "build:client-app": "npm run postinstall.web && ng build client-app",
     "build:functions": "npm run postinstall.web && ng build functions",
     "build:all": "npm run postinstall.web && ng build admin-app && ng build client-app && ng build functions",
-    "firebase:serve": "concurrently --kill-others \"yarn run build:functions --watch\" \"firebase serve --only functions\"",
+    "test:admin-app": "ng e2e admin-app-e2e --watch",
+    "test:client-app": "ng e2e client-app-e2e --watch",
+    "test:all": "ng e2e",
+    "firebase:serve": "concurrently --kill-others \"yarn run build:functions --watch\" \"firebase serve\"",
+    "firebase:serve:functions": "concurrently --kill-others \"yarn run build:functions --watch\" \"firebase serve --only functions\"",
     "firebase:shell": "concurrently --kill-others \"yarn run build:functions --watch\" \"firebase functions:shell\" --raw",
-    "firebase:deploy": "firebase deploy"
+    "firebase:deploy": "firebase deploy",
+    "firebase:deploy:functions": "firebase deploy --only functions",
+    "firebase:deploy:admin-app": "firebase deploy --only hosting:admin",
+    "firebase:deploy:client-app": "firebase deploy --only hosting:client",
+    "firebase:deploy:hosting": "firebase deploy --only hosting"
   },
   "private": true,
   "dependencies": {
@@ -71,13 +78,13 @@
     "@angular/cli": "8.3.21",
     "@angular/compiler-cli": "^8.2.14",
     "@angular/language-service": "^8.2.14",
-    "@nrwl/angular": "~8.9.0",
-    "@nrwl/cypress": "8.9.0",
-    "@nrwl/jest": "8.9.0",
+    "@nrwl/angular": "~8.10.1",
+    "@nrwl/cypress": "8.10.1",
+    "@nrwl/jest": "8.10.1",
     "@nrwl/node": "^8.9.0",
     "@nrwl/schematics": "^8.9.0",
-    "@nrwl/workspace": "8.9.0",
-    "@nstudio/angular": "8.0.15",
+    "@nrwl/workspace": "8.10.1",
+    "@nstudio/angular": "8.1.1",
     "@nstudio/web-angular": "^8.0.15",
     "@nstudio/xplat": "^8.0.15",
     "@types/jest": "24.0.24",
