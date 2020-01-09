@@ -67,7 +67,7 @@ npm run start.electron.admin
 ```
 -->
 
-#### Working with Firebase Functions
+#### Working with Firebase Functions Locally
 
 ```bash
 npm run build:functions                     # build dist/apps/functions/
@@ -93,18 +93,6 @@ nx affected:build
 nx affected:e2e
 nx affected:test
 nx affected:lint
-```
-
----
-
-#### Deployment Scripts
-
-```bash
-firebase:deploy:functions                   # deploy Google Cloud functions
-firebase:deploy:admin-app                   # deploy to hosting admin-app
-firebase:deploy:client-app                  # deploy to hosting:client-app
-firebase:deploy:hosting                     # deploy only hosting
-firebase:deploy                             # deploy all
 ```
 
 ---
@@ -191,11 +179,14 @@ nx generate @nrwl/node:application functions --unit-test-runner=jest --directory
 # > [press enter for default location "apps/"]
 ```
 
-##### Firebase setup
+-->
+
+##### Firebase Setup
 
 ```bash
-npm i -g firebase-tools
-firebase login
+> npm i -g firebase-tools
+
+> firebase login
 
 # If you created your project in the firebase website account, during firebase deployment we need to select
 # that firebase project for hosting. Also if you created more than one project in the firebase account,
@@ -205,12 +196,23 @@ firebase use --add
 
 # It will list multiple project and you can choose one from that option. Then run firebase deploy.
 
-firebase deploy
+firebase deploy                 # For granular deployment options, use "Firebase Deployment Scripts" below.
+
 ```
 
 ---
 
--->
+#### Firebase Deployment Scripts
+
+```bash
+npm run firebase:deploy:functions                   # deploy Google Cloud functions
+npm run firebase:deploy:admin-app                   # deploy to hosting admin-app
+npm run firebase:deploy:client-app                  # deploy to hosting:client-app
+npm run firebase:deploy:hosting                     # deploy only hosting
+npm run firebase:deploy                             # deploy all
+```
+
+---
 
 #### Shared libraries
 
@@ -225,9 +227,7 @@ The goal of a code-sharing strategy is to support the architecture where a singl
 
 ---
 
-##### Code scaffolding examples
-
-##### Generate components
+#### Code scaffolding examples
 
 ```bash
 # Generate Angular component
@@ -241,7 +241,7 @@ ng g @nrwl/angular:library users --unit-test-runner=jest --directory=navigation 
 ```
 
 ```bash
-# Typescript library
+# Generate Typescript library
 ng g @nrwl/workspace:library models --unit-test-runner=none --directory=shared-data-access --dryRun
 ```
 
@@ -253,13 +253,11 @@ ng generate @nrwl/workspace:library --name=services --no-interactive --dryRun
 ng generate @nrwl/angular:service --name=children --project=services --dryRun
 ```
 
-Explore more examples in "**/tools/scaffolding/**" directory.
+*explore more examples in "**/tools/scaffolding/**" directory
 
----
+__or__
 
-### Recommendation
-
-Use [Angular Console](https://angularconsole.com/) for Visual Studio Code as code scaffolding tool.
+Use [Angular Console](https://angularconsole.com/) for Visual Studio Code as a code scaffolding tool.
 
 ---
 
